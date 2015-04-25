@@ -1273,15 +1273,6 @@ void deserialize_sindex_info(const std::vector<char> &data,
     throw_if_bad_deserialization(success, "sindex description");
 
     switch (cluster_version) {
-    case cluster_version_t::v1_13:
-    case cluster_version_t::v1_13_2:
-        info_out->mapping_version_info.original_reql_version =
-            reql_version_t::v1_13;
-        info_out->mapping_version_info.latest_compatible_reql_version =
-            reql_version_t::v1_13;
-        info_out->mapping_version_info.latest_checked_reql_version =
-            reql_version_t::v1_13;
-        break;
     case cluster_version_t::v1_14:
     case cluster_version_t::v1_15:
     case cluster_version_t::v1_16:
